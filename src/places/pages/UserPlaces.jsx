@@ -1,4 +1,5 @@
 import PlaceList from "../components/PlaceList";
+
 import { useParams } from "react-router-dom";
 
 const DUMMY_PLACES = [
@@ -16,8 +17,8 @@ const DUMMY_PLACES = [
     creator: "u1",
   },
   {
-    id: "p1",
-    title: "Empire State Building",
+    id: "p2",
+    title: "Emp. State Building",
     description: "One of the most famous sky scrapers in the world!",
     imageUrl:
       "https://flatironnomad.nyc/wp-content/uploads/2023/04/esb-header-history-scaled.jpg",
