@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "../../shared/components/FormElements/Button";
 import Card from "../../shared/components/UIElements/Card";
+import Input from "../../shared/components/FormElements/Input";
+
+// Logic Helper functions
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/util/validators";
-
+import { AuthContext } from "../../shared/context/auth-context";
+// Hooks
 import useForm from "../../shared/hooks/form-hook";
 
 import "./Auth.css";
-import Input from "../../shared/components/FormElements/Input";
 
 const Auth = () => {
+  const auth = useContext(AuthContext);
+
   const [isLoginMode, setIsLoginMode] = useState(true);
 
   const [formState, inputHandler, setFormData] = useForm(
@@ -56,6 +61,7 @@ const Auth = () => {
   const placeSubmitHandler = (event) => {
     event.preventDefault();
     console.log(formState.inputs); // Backend
+    auth.login();
   };
 
   return (
