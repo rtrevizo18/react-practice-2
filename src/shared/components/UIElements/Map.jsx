@@ -8,29 +8,16 @@ const Map = (prop) => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
   });
 
-  const [map, setMap] = React.useState(null);
+  if (!isLoaded) return null;
 
-  const onLoad = React.useCallback(function callback(map) {
-    setMap(map);
-  }, []);
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null);
-  }, []);
-
-  return isLoaded ? (
+  return (
     <GoogleMap
       mapContainerClassName="map"
       center={prop.center}
       zoom={prop.zoom}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
     >
       {<MarkerF position={prop.center} />}
-      <></>
     </GoogleMap>
-  ) : (
-    <></>
   );
 };
 
