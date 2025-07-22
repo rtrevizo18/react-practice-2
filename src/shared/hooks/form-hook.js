@@ -58,4 +58,4 @@ const useForm = (initialInputs, initialFormValidity) => {
   return [formState, inputHandler, setFormData];
 };
 
-export default useForm;
+export { useForm };

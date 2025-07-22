@@ -13,7 +13,7 @@ import {
 } from "../../shared/util/validators";
 import { AuthContext } from "../../shared/context/auth-context";
 // Hooks
-import useForm from "../../shared/hooks/form-hook";
+import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 import "./Auth.css";
@@ -67,7 +67,7 @@ const Auth = () => {
 
     if (isLoginMode) {
       try {
-        await sendRequest(
+        const responseData = await sendRequest(
           "http://localhost:5001/api/users/login",
           "POST",
           JSON.stringify({
@@ -76,11 +76,12 @@ const Auth = () => {
           }),
           { "Content-Type": "application/json" }
         );
-        auth.login();
+
+        auth.login(responseData.user.id);
       } catch (err) {}
     } else {
       try {
-        await sendRequest(
+        const responseData = await sendRequest(
           "http://localhost:5001/api/users/signup",
           "POST",
           JSON.stringify({
@@ -92,7 +93,7 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-        auth.login();
+        auth.login(responseData.user.id);
       } catch (err) {}
     }
   };
