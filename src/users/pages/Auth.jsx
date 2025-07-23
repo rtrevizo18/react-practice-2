@@ -4,6 +4,7 @@ import Card from "../../shared/components/UIElements/Card";
 import Input from "../../shared/components/FormElements/Input";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 
 // Logic Helper functions
 import {
@@ -44,6 +45,7 @@ const Auth = () => {
         {
           ...formState.inputs,
           name: undefined,
+          image: undefined,
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -55,6 +57,10 @@ const Auth = () => {
             value: "",
             isValid: false,
           },
+          image: {
+            value: null,
+            isValid: false,
+          },
         },
         false
       );
@@ -64,6 +70,8 @@ const Auth = () => {
 
   const placeSubmitHandler = async (event) => {
     event.preventDefault();
+
+    console.log(formState.inputs);
 
     if (isLoginMode) {
       try {
@@ -136,6 +144,14 @@ const Auth = () => {
             errorText="Please enter a password of at least 8 character."
             onInput={inputHandler}
           />
+          {!isLoginMode && (
+            <ImageUpload
+              center
+              id="image"
+              onInput={inputHandler}
+              errorText="Please enter a valid image"
+            />
+          )}
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode ? "LOG IN" : "SIGN UP"}
           </Button>
