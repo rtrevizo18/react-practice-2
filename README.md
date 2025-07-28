@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# YourPlaces (Frontend) - MERN Stack Places Sharing App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application built with the MERN stack that allows users to share their favorite places with images and interactive maps. Users can create accounts, upload photos, and share locations with detailed descriptions and map integration.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **User Authentication**: Secure signup/login with JWT tokens
+- **Place Management**: Create, read, update, and delete places
+- **Image Upload**: Upload and store images using AWS S3
+- **Interactive Maps**: Google Maps integration for location visualization
+- **Responsive Design**: Mobile-friendly interface
+- **Real-time Validation**: Form validation with custom validators
+- **Protected Routes**: Authentication-based route protection
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 19** - UI library
+- **React Router DOM** - Client-side routing
+- **React Transition Group** - Smooth animations
+- **Google Maps API** - Interactive maps
+- **CSS3** - Styling
 
-### `npm test`
+### Backend [https://github.com/rtrevizo18/newplaces-api]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - Database
+- **AWS S3** - Image storage
+- **Google Geocoding API** - Address-to-Coordinates support
 
-### `npm run build`
+### Services
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Firebase** - Frontend Production deployment
+- **Heroku** - Backend Production deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Authentication System
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- JWT-based authentication with automatic token refresh
+- Persistent login state using localStorage
+- Protected routes based on authentication status
 
-### `npm run eject`
+### Place Management
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Create Places**: Add new places with title, description, address, and image
+- **View Places**: Browse all places by user
+- **Update Places**: Edit existing places (owner only)
+- **Delete Places**: Remove places with confirmation (owner only)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Image Handling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Client-side image preview before upload
+- AWS S3 integration for secure cloud storage
+- Automatic image optimization and serving
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Map Integration
 
-## Learn More
+- Address-to-coordinates conversion using Google Geocoding API
+- Interactive map display for each place
+- Responsive map containers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Form Validation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Custom validation system with multiple validators:
+  - Required fields
+  - Email format validation
+  - Minimum/maximum length validation
+  - File type validation
 
-### Code Splitting
+## 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application is fully responsive with breakpoints at:
 
-### Analyzing the Bundle Size
+- Mobile: < 768px
+- Tablet/Desktop: ≥ 768px
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎨 UI/UX Features
 
-### Making a Progressive Web App
+- **Loading States**: Spinner components during API calls
+- **Error Handling**: User-friendly error modals
+- **Smooth Transitions**: CSS transitions for better UX
+- **Backdrop Overlays**: Modal and drawer overlays
+- **Form Feedback**: Real-time validation feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔗 API Integration
 
-### Advanced Configuration
+The frontend integrates with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Custom backend API for user and place management
+- Google Maps API for map support
+- AWS S3 for static image retrieval
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -m 'Add feature'`
+4. Push to branch: `git push origin feature-name`
+5. Submit a pull request
 
-### `npm run build` fails to minify
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is part of a MERN stack tutorial and is for educational purposes.
+
+## 🙏 Acknowledgments
+
+- Google Maps API for mapping functionality
+- AWS S3 for reliable image storage
+- React community for excellent documentation
